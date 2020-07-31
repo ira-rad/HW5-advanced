@@ -1,7 +1,7 @@
 //1
-const getRandomArray = (length, min, max) => new Array(length).fill('').map(() => 
-Math.floor(Math.random() * (max - min + 1)) + min)
-
+function getRandomArray(length, min, max){
+return new Array(length).fill('').map(() => Math.floor(Math.random() * (max - min + 1)) + min)
+}
 document.writeln(`<p> №1:  ${getRandomArray(15, 1, 100)}</p>`);
 //2
 function getModa(numbers) {
