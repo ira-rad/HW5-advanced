@@ -5,7 +5,7 @@ function getRandomArray(length, min, max){
     document.writeln(`<p> №1:  ${getRandomArray(15, 1, 100)}</p>`);
     
 //2
-function getModa(numbers) {
+function getModa(...numbers) {
     
     var modes = [], count = [], i, number, maxIndex = 0;
  
@@ -26,7 +26,7 @@ function getModa(numbers) {
  
     return modes;
 }
-document.writeln(`<p> №2:  ${getModa([6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2])}</p>`);
+document.writeln(`<p> №2:  ${getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)}</p>`);
 
 //3
 function getAverage(...numbers) {
@@ -36,7 +36,7 @@ document.writeln(`<p> №3:  ${getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 2
 
 
 //4
-function mediana(numbers) {
+function mediana(...numbers) {
     var median = 0,
      numsLength = numbers.length;
     numbers.sort((a, b) => a - b);
@@ -48,7 +48,7 @@ function mediana(numbers) {
 
     return median;
 }
-document.writeln(`<p> №4:  ${mediana([1, 2, 3, 4, 5])}</p>`)
+document.writeln(`<p> №4:  ${mediana(1, 2, 3, 4)}</p>`)
 
 //5
 const filterEvenNumbers = (...numbers) =>{
