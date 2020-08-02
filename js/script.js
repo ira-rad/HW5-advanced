@@ -7,9 +7,9 @@ function getRandomArray(length, min, max){
 //2
 function getModa(...numbers) {
     
-    var modes = [], count = [], i, number, maxIndex = 0;
+    let modes = [], count = [], i, number, maxIndex = 0;
  
-    for (i = 0; i < numbers.length; i += 1) {
+    for (let i = 0; i < numbers.length; i += 1) {
         number = numbers[i];
         count[number] = (count[number] || 0) + 1;
         if (count[number] > maxIndex) {
@@ -30,44 +30,33 @@ document.writeln(`<p> №2:  ${getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 
 
 //3
 function getAverage(...numbers) {
-    return numbers.reduce((a, b) => Math.floor(a + b)) / numbers.length;
+    return numbers.reduce((a, b) => Math.floor(a + b),  0) / numbers.length;
 }
 document.writeln(`<p> №3:  ${getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)}</p>`);
 
 
 //4
 function mediana(...numbers) {
-    var median = 0,
-     numsLength = numbers.length;
-    numbers.sort((a, b) => a - b);
-    if ( numsLength % 2 === 0) {
-        median = (numbers[numsLength / 2 - 1] + numbers[numsLength/ 2]) / 2;
-    } else { 
-        median = numbers[(numsLength - 1) / 2];
-    }
+    let median = 0
+    let numsLength = numbers.length;
 
+        median = numsLength % 2 === 0
+        ? (numbers[numsLength / 2 - 1] + numbers[numsLength/ 2]) / 2
+        : numbers[(numsLength - 1) / 2];
     return median;
 }
 document.writeln(`<p> №4:  ${mediana(1, 2, 3, 4)}</p>`)
 
 //5
-const filterEvenNumbers = (...numbers) =>{
-    const evenNumb = numbers.filter(num => num % 2)
-    return evenNumb
-}
+const filterEvenNumbers = (...numbers) => numbers.filter(num => num % 2);
 document.writeln(`<p> №5:  ${filterEvenNumbers(1, 2, 3, 4, 5, 6)}</p>`)
+
 //6
-const countPositiveNumbers = (...numbers) => {
-    const positiveNumbers = numbers.filter(num => num > 0);
-    return positiveNumbers.length
-}
+const countPositiveNumbers = (...numbers) => numbers.filter(num => num > 0).length;
 document.writeln(`<p> №6:  ${countPositiveNumbers(1, -2, 3, -4, -5, 6)}</p>`)
 
 //7
-const getDividedByFive = (...numbers) =>{
-const numbersDividedByFive = numbers.filter(num => num % 5 === 0)
-return numbersDividedByFive
-}
+const getDividedByFive = (...numbers) => numbers.filter(num => num % 5 === 0)
 document.writeln(`<p> №7:  ${getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)}</p>`)
 
 
